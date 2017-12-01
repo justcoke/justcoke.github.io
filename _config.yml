@@ -26,8 +26,8 @@ gems:
 
 # Site owner
 owner:
-  name:
-  email:
+  name: "Bj&ouml;rn Engel"
+  email: "mail@test.de"
   twitter:
   google:
     ad-client:
