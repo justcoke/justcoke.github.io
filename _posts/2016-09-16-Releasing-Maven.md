@@ -73,6 +73,7 @@ $ clip < ~/.ssh/id_rsa.pub
 
 GitHub: Testing SSH connection
 * open Git Bash
+
 ```shell
 $ ssh -T git@github.com
 ```
@@ -93,18 +94,20 @@ $ gpg --gen-key
 ** type, size, and time of validity: default values can be used
 ** name, email and comment are essential as they will be seen by anyone downloading a software artifact and validating a signature
 ** passphase should be empty
+
 ```shell
-list existing keys
+# list existing keys
 $ gpg --list-keys
 /c/Users/bjoern/.gnupg/pubring.gpg
 
 pub   2048R/27467A0F 2016-06-18 #<1>
-uid                  Björn Engel <bjoern@example.de>
+uid                  BjÃ¶rn Engel <bjoern@example.de>
 sub   2048R/4AC3ED13 2016-06-18
 ```
-<1> the relevant public key (27467A0F)
+1. the relevant public key (27467A0F)
 
 * distribute public key to a key server with 
+
 ```shell
 $ gpg --keyserver hkp://pgp.mit.edu --send-keys 27467A0F
 ```
@@ -121,143 +124,143 @@ Sonatype: add required elements in pom.xml
 ...
 <name>Demo Application</name> //<4>
 <description>Artifact's description</description> //<5>
-<url>http://www.example.com/example-application</url> //<6>
+<url>https://justcoke.github.io/properties-maven-plugin</url> //<6>
 ...
 <licenses> //<7>
-<license>
-<name>Apache 2.0</name>
-<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-<distribution>repo</distribution>
-</license>
+    <license>
+        <name>Apache 2.0</name>
+        <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+    </license>
 </licenses>
 ...
 <developers> //<8>
-<developer>
-<name>Björn Engel</name>
-<url>http://about.me/bjoernengel</url>
-<timezone>Europe/Berlin</timezone>
-</developer>
+    <developer>
+        <name>BjÃ¶rn Engel</name>
+        <url>http://about.me/bjoernengel</url>
+        <timezone>Europe/Berlin</timezone>
+    </developer>
 </developers>
 ...
 <scm> //<9>
-<developerConnection>scm:git:git@github.com:justcoke/properties-maven-plugin.git</developerConnection>
-<connection>scm:git:https://github.com/justcoke/properties-maven-plugin.git</connection>
-<url>https://github.com/justcoke/properties-maven-plugin.git</url>
-  <tag>HEAD</tag>
-   </scm>
+    <developerConnection>scm:git:git@github.com:justcoke/properties-maven-plugin.git</developerConnection>
+    <connection>scm:git:https://github.com/justcoke/properties-maven-plugin.git</connection>
+    <url>https://github.com/justcoke/properties-maven-plugin.git</url>
+</scm>
 ...
 <!-- configure Maven to deploy to the OSSRH Nexus server with the Nexus
 Staging Maven plugin -->
 <distributionManagement> //<10>
 <!-- the Maven deploy plugin needs a full distributionManagement section -->
-<repository>
-<id>ossrh-release</id>
-<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-<uniqueVersion>true</uniqueVersion>
-</repository>
-<snapshotRepository>
-<id>ossrh-snapshot</id>
-<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-<uniqueVersion>false</uniqueVersion>
-</snapshotRepository>
+    <repository>
+        <id>ossrh-release</id>
+        <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        <uniqueVersion>true</uniqueVersion>
+    </repository>
+    <snapshotRepository>
+        <id>ossrh-snapshot</id>
+        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        <uniqueVersion>false</uniqueVersion>
+    </snapshotRepository>
 <!-- The above configurations will get the user account details to deploy
 to OSSRH from Maven settings.xml file. -->
 </distributionManagement>
 ...
 <build>
-<plugins>
-<plugin> //<11>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-release-plugin</artifactId>
-<version>2.5.3</version>
-<configuration>
-<autoVersionSubmodules>true</autoVersionSubmodules>
-<releaseProfiles>release</releaseProfiles> //<12>
-</configuration>
-</plugin>
-</plugins>
+    <plugins>
+        <plugin> //<11>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-release-plugin</artifactId>
+            <version>2.5.3</version>
+            <configuration>
+                <autoVersionSubmodules>true</autoVersionSubmodules>
+                <releaseProfiles>release</releaseProfiles> //<12>
+            </configuration>
+        </plugin>
+    </plugins>
 ...
 </build>
 
 <profiles>
-<profile>
-<id>release</id> //<13>
-<build>
-<plugins>
-<plugin> //<14>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-source-plugin</artifactId>
-<version>2.2.1</version>
-<executions>
-<execution>
-<id>attach-sources</id>
-<goals>
-<goal>jar-no-fork</goal>
-</goals>
-</execution>
-</executions>
-</plugin>
-<plugin> //<15>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-javadoc-plugin</artifactId>
-<version>2.9.1</version>
-<executions>
-<execution>
-<id>attach-javadocs</id>
-<goals>
-<goal>jar</goal>
-</goals>
-<configuration>
-<additionalparam>-Xdoclint:none</additionalparam>
-<show>public</show>
-<quiet>true</quiet>
-</configuration>
-</execution>
-</executions>
-</plugin>
-<plugin> //<16>
-<groupId>org.apache.maven.plugins</groupId>
-<artifactId>maven-gpg-plugin</artifactId>
-<version>1.6</version>
-<executions>
-<execution>
-<id>sign-artifacts</id>
-<phase>verify</phase>
-<goals>
-<goal>sign</goal>
-</goals>
-</execution>
-</executions>
-</plugin>
-</plugins>
-</build>
-</profile>
+    <profile>
+        <id>release</id> //<13>
+        <build>
+            <plugins>
+                <plugin> //<14>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin> //<15>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                            <configuration>
+                                <additionalparam>-Xdoclint:none</additionalparam>
+                                <show>public</show>
+                                <quiet>true</quiet>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin> //<16>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.6</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    </profile>
 ...
 </profiles>
 </project>
 ```
 
-<1> top level namespace level for your project starting with the reverse domain name
-<2> unique name for component
-<3> version string for component
-<4> project name
-<5> project description
-<6> project website
-<7> license information
-<8> developer information
-<9> SCM information
-<10> distribution management's information
-<11> using maven-release-plugin
-<12> profile's name for release
-<13> profile for release
-<14> released artifact's source
-<15> released artifact's javadoc
-<16> signing released artifact
+1. top level namespace level for your project starting with the reverse domain name
+2. unique name for component
+3. version string for component
+4. project name
+5. project description
+6. project website
+7. license information
+8. developer information
+9. SCM information
+10. distribution management's information
+11. using maven-release-plugin
+12. profile's name for release
+13. profile for release
+14. released artifact's source
+15. released artifact's javadoc
+16. signing released artifact
 
 [Requirements](http://central.sonatype.org/pages/requirements.html)
 
 Updating settings.xml
 * add sonatype login data in maven's settings.xml
+
 ```xml
 <server>
     <id>ossrh-release</id>
