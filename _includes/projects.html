@@ -1,0 +1,26 @@
+<div class="user-details">
+  <h1> Featured Projects </h1>
+</div>
+{% assign even = false %}
+{% for project in site.posts %}
+  {% capture u %}{% cycle 'odd', 'even' %}{% endcapture %}
+
+  {% if u == 'odd' %}
+    {% assign imageClass = 'images-right' %}
+    {% assign contentClass = 'contents' %}
+  {% else %}
+    {% assign imageClass = 'images-left' %}
+    {% assign contentClass = 'contents-right' %}
+  {% endif %}
+
+  <div class="user-projects">
+	<div class="{{imageClass}}">
+	  <img alt="{{project.title}}" src="{{ project.image | prepend: site.baseurl }}" />
+	</div>
+	<div class="{{contentClass}}">
+	  <h3>{{project.title}}</h3>
+	  {{project.content}}
+	  <a class="project-link" href="{{project.site}}">Check it out</a>
+	</div>
+  </div>
+{% endfor %}

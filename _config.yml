@@ -1,64 +1,18 @@
-# Site wide configuration
+# Site settings
+title: About Bj&ouml;rn Engel
+description: About Bj&ouml;rn Engel
+url: "https://justcoke.github.io"
 
-title: "Bj&ouml;rn Engel"
-description: "This is a description of my awesome site."
-logo: # 120x120 px default image used for Twitter summary card
-teaser: # 400x250 px default teaser image used in image archive grid
-locale: de
-url:
-feed:
-  path: atom.xml
+# User settings
+username: Bj&ouml;rn Engel
+user_description: Software Engineer and Father
+user_title: Software Engineer
+email: 
+xing_profile: Bjoern_Engel7
+github_username: justcoke
 
-# Jekyll configuration
+# Google-analytics
+google-analytics:
+  id: ""
 
-sass:
-  sass_dir: _sass
-  style: compressed
-permalink: /:categories/:title/
-kramdown:
-  toc_levels: 1..2
-highlighter: rouge
-gems:
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-
-
-# Site owner
-owner:
-  name: "Bj&ouml;rn Engel"
-  email: "mail@test.de"
-  twitter:
-  google:
-    ad-client:
-    ad-slot:
-  bio:
-  avatar: bio-photo.jpg # 160x160 px image for author byline
-  disqus-shortname:
-
-
-include:
-  - .htaccess
-exclude:
-  - "*.less"
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
-  - CHANGELOG
-  - Capfile
-  - Gemfile
-  - Gruntfile.js
-  - LICENSE
-  - README
-  - Rakefile
-  - config
-  - gulpfile.js
-  - lib
-  - log
-  - node_modules
-  - package.json
-  - spec
-  - tmp
+exclude: ['package.json', 'src' , 'node_modules']
