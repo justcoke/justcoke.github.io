@@ -1,6 +1,6 @@
 ---
 title: Examples in homeautomation
-site: https://github.com/justcoke/openhab-examples
+site: https://justcoke.github.io/smarthome-examples/
 image: "/assets/img/homeautomation.jpg"
 ---
 
