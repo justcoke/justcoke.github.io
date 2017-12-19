@@ -4,8 +4,8 @@ site: https://justcoke.github.io/smarthome-examples/
 image: "/assets/img/homeautomation.jpg"
 ---
 
-* openHAB 2
+* openHAB2
 * ESP8266
 * MQTT
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+My blog where I present some interesting smart home examples. There will be some very simple cases but also more complex ones.

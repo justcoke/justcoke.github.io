@@ -4,8 +4,6 @@ site: http://justcoke.github.io/properties-maven-plugin/
 image: "/assets/img/properties-maven-plugin.jpg"
 ---
 
-* eins
-* zwei
-* drei
+* Maven Plugin
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+A maven plugin that generates a simple Java class by a given properties-file. Goal is give an alternative to access properties. When the used property does not exist you will get an exception while compiling what is much better than a runtime exception.

@@ -8,4 +8,4 @@ image: "/assets/img/jcr4dropwizard.png"
 * JCR
 * Jackrabbit
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Dropwizard bundles that serves Java Content Repository and its reference implementation Apache Jackrabbit. The documentation for now is an example project only.
