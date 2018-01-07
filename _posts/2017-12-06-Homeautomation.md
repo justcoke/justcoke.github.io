@@ -8,4 +8,6 @@ image: "/assets/img/homeautomation.jpg"
 * ESP8266
 * MQTT
 
-My blog where I present some interesting smart home examples. There will be some very simple cases but also more complex ones.
+My blog where I present a collection some interesting smart home examples based on my favorite homeautomation software [openHAB][openHAB-Home]. There will be some very simple cases but also more complex ones.
+
+[openHAB-Home]: http://www.openhab.org/
