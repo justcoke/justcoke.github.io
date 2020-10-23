@@ -1,7 +1,7 @@
 # Site settings
 title: About Björn Engel
 description: About Björn Engel
-url: "https://justcoke.github.io"
+url: "https://engel-b.github.io"
 
 # User settings
 username: Björn Engel
@@ -9,7 +9,7 @@ user_description:  I'm a creative thinker and like to explore alternative soluti
 user_title: Software Engineer
 email: contact.justcoke@gmail.com
 xing_profile: Bjoern_Engel7
-github_username: justcoke
+github_username: engel-b
 
 # Google-analytics
 google-analytics:
