@@ -1,6 +1,6 @@
 ---
 title: Examples in homeautomation
-site: https://justcoke.github.io/smarthome-examples/
+site: https://engel-b.github.io/smarthome-memos/
 image: "/assets/img/homeautomation.jpg"
 ---
 

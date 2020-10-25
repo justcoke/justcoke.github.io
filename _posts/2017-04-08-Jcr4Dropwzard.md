@@ -1,6 +1,6 @@
 ---
 title: JCR support added to Dropwizard
-site: https://github.com/justcoke/dropwizard-jcr-module
+site: https://github.com/engel-b/dropwizard-jcr-module
 image: "/assets/img/jcr4dropwizard.png"
 ---
 

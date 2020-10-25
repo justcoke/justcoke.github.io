@@ -1,6 +1,6 @@
 ---
 title: properties-maven-plugin
-site: http://justcoke.github.io/properties-maven-plugin/
+site: http://engel-b.github.io/properties-maven-plugin/
 image: "/assets/img/properties-maven-plugin.jpg"
 ---
 
